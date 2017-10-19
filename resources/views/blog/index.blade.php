@@ -34,13 +34,13 @@
 									<input type="text" class="form-control" name="post_title" placeholder="Add Title" required>
 								</div><br><br>
 								<div class="form-group col-md-12 col-sm-12 col-xs-12">
-									<textarea class="form-control" minlength="100" maxlength="250" rows="5" name="post_description" placeholder="Add description""></textarea>
+									<textarea class="form-control" minlength="100" maxlength="250" rows="5" name="post_description" placeholder="Add description" required></textarea>
 								</div><br><br>
 								<div class="form-group col-md-12 col-sm-12 col-xs-12">
-									<textarea class="form-control" minlength="100" rows="10" name="post_content" placeholder="Add Content""></textarea>
+									<textarea class="form-control" minlength="100" rows="10" name="post_content" placeholder="Add Content"" required></textarea>
 								</div><br><br>
 								<div class="form-group col-md-4 col-sm-4 col-xs-12">
-									<input type="file"  name="post_image" class="form-control">
+									<input type="file"  name="post_image" class="form-control" required>
 								</div><br><br>								
 								<div class="form-group col-md-12 col-sm-12 col-xs-12" align="center">
 									<button class="btn btn-register">Create Post</button>
