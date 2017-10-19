@@ -11,30 +11,6 @@ class EloquentPostRepository implements PostContract
 	public function create($request){
 	
         $post = new Post;
-
-
-
-      //if($request->post_image != null){
-        $explodeBase64Image = explode(',', $request->post_image);
-        //$decodedimage = base64_decode($explodeBase64Image[1]);
-        \Log::info($decodedimage);
-
-        if(str_contains($explodeBase64Image[0], 'jpeg')){
-          $extension = 'jpg';
-        }else{
-          $extension = 'png';
-        }
-
-        // $post_image = $request->file('post_image');
-        $imageFileName = time() . '.' . $extension;
-        $s3 = \Storage::disk('s3');
-        $filePath = 'post_image/' . $imageFileName;
-
-        $path = $s3->put($filePath, $decodedimage, 'public');
-        $imageName = \Storage::disk('s3')->url($filePath);
-         Log::info($imageName);
-
-
         $post->post_title = ucwords($request->post_title);
         $post->post_description = $request->post_description;
         $post->post_content = $request->post_content;
