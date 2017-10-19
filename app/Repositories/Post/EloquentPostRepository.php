@@ -14,7 +14,7 @@ class EloquentPostRepository implements PostContract
         $post->post_title = ucwords($request->post_title);
         $post->post_description = $request->post_description;
         $post->post_content = $request->post_content;
-        $post->post_image = $imageName;
+        $post->post_image = $request->post_image;
         $post->post_slug = strtolower(str_slug($request->post_title));
 
         $slug = Post::where('post_slug', $post['post_slug'])->first();

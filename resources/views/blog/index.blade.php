@@ -52,8 +52,8 @@
 						    
 						<article>
 							<div class="entry-cover">
-								<a href="{{ route('postview', $post->post_slug) }}"><img src="images/blog/blog-1.jpg" alt="blog-1"/></a>
-								<a href="{{ route('postview', $post->post_slug) }}" class="read-more">Read More</a>
+								<a href="{{ route('postview', $post->post_slug, $post->id) }}"><img src="images/blog/blog-1.jpg" alt="blog-1"/></a>
+								<a href="{{ route('postview', $post->post_slug, $post->id) }}" class="read-more">Read More</a>
 							</div>	
 							<!-- Post Content -->
 							<div class="post-content">

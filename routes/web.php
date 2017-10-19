@@ -14,8 +14,8 @@
 //Routes for Blog
 Route::get('/', 'BlogController@index')->name('landingpage');
 
-Route::get('/newpost', 'PostController@createpost')->name('newpostform');
-Route::post('/newpost', 'PostController@handleNewPost')->name('handleNewPost');
+//Route::get('/newpost', 'PostController@createpost')->name('newpostform');
+Route::post('/create', 'PostController@handleNewPost')->name('handleNewPost');
 
 Route::get('/category/{post_slug}', 'PostController@viewpost')->name('postview');
 Route::get('/edit/{post_slug}', 'PostController@editpost')->name('postedit');

@@ -20,4 +20,12 @@ class BlogController extends Controller
     	return view('blog.index')->with('allPosts', $allPost);
     }
 
+    //CONTROLS FOR APIs
+
+    public function apiAllpost(){
+    	$allPost = $this->repo->findByAll();
+    	//dd($allPost);
+    	$json = json_encode($allPost);
+    	return $json;
+    }
 }

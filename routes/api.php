@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Routes for Blog Post Api
+Route::get('news/all', 'BlogController@apiAllpost')->middleware('cors');
+Route::get('/{id}', 'PostController@apiViewpost')->middleware('cors');

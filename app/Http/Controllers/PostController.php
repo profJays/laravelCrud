@@ -13,9 +13,9 @@ class PostController extends Controller
       $this->repo = $postContract;
     }
 
-    public function createpost(){
-    	return view('blog.addpost');
-    }
+    // public function createpost(){
+    // 	return view('blog.addpost');
+    // }
 
     public function handleNewPost(Request $request){
     	$new_post = $this->repo->create($request);
@@ -59,6 +59,14 @@ class PostController extends Controller
         }else{
             return back();
         } 
-    }     
+    }    
+
+    //Controls for API 
+    public function apiViewpost($postId){
+    	$post = $this->repo->findById($postId);
+    	$json = json_encode($post);
+    	return $json;
+    }
+
 
 }
