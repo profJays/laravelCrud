@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Routes for Blog Post Api
 Route::get('news/all', 'BlogController@apiAllpost')->middleware('cors');
-Route::get('/{id}', 'PostController@apiViewpost')->middleware('cors');
+Route::get('/news/{id}', 'PostController@apiViewpost')->middleware('cors');
